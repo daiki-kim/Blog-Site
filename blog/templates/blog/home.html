@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <h3>This is very simple blog-post web site. I use django frame-work for building this site. </h3>
+    <div>
+        {% for post in posts %}
+            <div>
+                <h2>{{ post.title }}</h2>
+                <p><h3>{{ post.subtitle }}</h3></p>
+                <p>Author: {{ post.author }}<br>Date: {{ post.date_posted }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="#">↗︎All Posts</a>
+</body>
+</html>
