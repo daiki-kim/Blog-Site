@@ -8,6 +8,9 @@
     <h1>Blog Posts</h1>
     <h3>This is very simple blog-post web site. I use django frame-work for building this site. </h3>
     <br>
+    <a href="{% url 'login' %}">↗Login</a>
+    <a href="{% url 'register' %}">↗Register</a>
+    <br>
     <p>Latest posts</p>
     <div>
         {% for post in posts %}
