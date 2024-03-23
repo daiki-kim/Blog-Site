@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <br>
+    <h2>{{ post.subtitle }}</h2>
+    <p>Author: {{ post.author }}<br>Date: {{ post.date_posted|date:"M d, Y" }}</p>
+    <br>
+    <p>Content:</p>
+    <p>{{ post.content }}</p>
+    <hr><br>
+    <a href="{% url 'post_list' %}">↗Back All Posts</a>
+    <a href="{% url 'home' %}">↗Back Home</a>
+</body>
+</html>
