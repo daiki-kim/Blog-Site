@@ -1,4 +1,4 @@
-# Demo Blog-Site
+# Demo-Blog-Site
 
 ## 概要
 以下の機能を含んだ簡単なブログサイトです。
