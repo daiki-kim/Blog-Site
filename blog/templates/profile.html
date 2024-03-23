@@ -5,6 +5,25 @@
 </head>
 <body>
     <h1>Your Profile</h1>
-    <p>User Name: {{ user.username }}</p>
+    <p>Hi {{ user.username }}👋 Welcome to our Blog Site!</p>
+    <br>
+    <p>Your Posts</p>
+    {% for post in user_posts %}
+    <div>
+        <a href="{% url 'post_detail' post.id %}"><h2>{{ post.title }}</h2></a>
+        <p><h3>{{ post.subtitle }}</h3></p>
+        <p>Author: {{ post.author }}<br>Date: {{ post.date_posted|date:"M d, Y" }}</p>
+    </div>
+    {% empty %}
+        <p>No posts to show...</p>
+    {% endfor %}
+    <br>
+    <a href="{% url 'home' %}">Back Home</a>
+    <a href="{% url 'post_create' %}">Create New Post</a>
+    <br>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>

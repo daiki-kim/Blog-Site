@@ -1,19 +1,18 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
+
 from .models import Post
-from .forms import UserRegisterForm
+from .forms import PostForm, UserRegisterForm
 
 
-# Create your views here.
 def home(request):
-    # Postモデルから最新の3つを取得
     posts = Post.objects.order_by("-date_posted")[:3]
     return render(request, "home.html", {"posts": posts})
 
 
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by("-date_posted")
     return render(request, 'post_list.html', {"posts": posts})
 
 
@@ -37,4 +36,17 @@ def register(request):
 
 @login_required
 def profile(request):
-    return render(request, "profile.html")
+    user_posts = Post.objects.filter(author=request.user).order_by("-date_posted")
+    return render(request, "profile.html", {"user_posts": user_posts})
+
+@login_required
+def post_create(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.instance.author = request.user
+            form.save()
+            return redirect("post_list")
+    else:
+        form = PostForm()
+    return render(request, "post_create.html", {"form": form})

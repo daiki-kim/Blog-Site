@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import home, post_list, post_detail, profile, register
+from .views import home, post_create, post_detail, post_list, profile, register
 
 
 urlpatterns = [
@@ -11,4 +11,5 @@ urlpatterns = [
     path("logout/", auth_views.LogoutView.as_view(template_name="logout.html"), name="logout"),
     path("register/", register, name="register"),
     path("profile/", profile, name="profile"),
+    path("post/new/", post_create, name="post_create")
 ]

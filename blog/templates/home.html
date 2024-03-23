@@ -5,11 +5,20 @@
     <title>Blog</title>
 </head>
 <body>
+    {% if user.is_authenticated %}
+        <form action="{% url 'profile' %}" method="get">
+            <button type="submit">See Profile</button>
+        </form>
+    {% else %}
+        <form action="{% url 'login' %}" method="get">
+            <button type="submit">Login</button>
+        </form>
+        <form action="{% url 'register' %}" method="get">
+            <button type="submit">Register</button>
+        </form>
+    {% endif %}
     <h1>Blog Posts</h1>
     <h3>This is very simple blog-post web site. I use django frame-work for building this site. </h3>
-    <br>
-    <a href="{% url 'login' %}">↗Login</a>
-    <a href="{% url 'register' %}">↗Register</a>
     <br>
     <p>Latest posts</p>
     <div>
