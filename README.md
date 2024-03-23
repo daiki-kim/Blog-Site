@@ -23,7 +23,6 @@ python -m venv venv
 
 Windowsの場合：
 ```bash
-Copy code
 venv\Scripts\activate
 ```
 
