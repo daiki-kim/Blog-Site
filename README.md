@@ -44,9 +44,8 @@ pip install -r requirements.txt
 ```
 
 ## 使用方法
-データベースのマイグレーションを作成して適用します：
+データベースをセットアップします：
 ```bash
-python manage.py makemigrations
 python manage.py migrate
 ```
 プロジェクトディレクトリで以下のコマンドで実行します：
