@@ -38,6 +38,10 @@ source venv/bin/activate
 ```
 
 ## インストール方法
+Demo-Blog-Siteに移動します：
+```bash
+cd Demo-Blog-Site
+```
 - インストールコマンド:
 ```bash
 pip install -r requirements.txt
