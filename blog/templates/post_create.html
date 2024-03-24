@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>Create Post</title>
 </head>
 <body>
@@ -10,5 +11,7 @@
         {{ form.as_p }}
         <button type="submit">Post</button>
     </form>
+    <br>
+    <a href="{% url 'post_list' %}">Back Home</a>
 </body>
 </html>

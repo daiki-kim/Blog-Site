@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>{{ post.title }}</title>
 </head>
 <body>
@@ -12,7 +13,6 @@
     <p>Content:</p>
     <p>{{ post.content }}</p>
     <hr><br>
-    <a href="{% url 'post_list' %}">↗Back All Posts</a>
-    <a href="{% url 'home' %}">↗Back Home</a>
+    <a href="{% url 'post_list' %}">Back Home</a>
 </body>
 </html>

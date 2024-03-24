@@ -5,12 +5,9 @@
     <title>Blog</title>
 </head>
 <body>
-    {% if user.is_authenticated %}
-        <a href="{% url 'profile' %}">↗See Profile</a>
-    {% else %}
-        <a href="{% url 'login' %}">↗Login</a>
-        <a href="{% url 'register' %}">↗Register</a>
-    {% endif %}
+    <form action="{% url 'post_create' %}" method="get">
+        <button type="submit">New Post</button>
+    </form>
     <h1>All Posts</h1>
     <h3>All posts are in here. Choose and click you are interested! </h3>
     <br>
@@ -24,6 +21,5 @@
             <br>
         {% endfor %}
     </div>
-    <a href="{% url 'home' %}">↗Back Home</a>
 </body>
 </html>
